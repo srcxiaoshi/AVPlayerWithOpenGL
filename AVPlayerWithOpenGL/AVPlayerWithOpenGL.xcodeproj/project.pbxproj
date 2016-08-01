@@ -15,6 +15,10 @@
 		3C6CF6DF1D4E2F1C001D6287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CF6DD1D4E2F1C001D6287 /* LaunchScreen.storyboard */; };
 		3C6CF6EA1D4E2F1C001D6287 /* AVPlayerWithOpenGLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6E91D4E2F1C001D6287 /* AVPlayerWithOpenGLTests.m */; };
 		3C6CF6F51D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6F41D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.m */; };
+		E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21811D4F403B004E29DA /* APLEAGLView.m */; };
+		E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21851D4F4087004E29DA /* PlayerView.m */; };
+		E1FB218C1D4F4EE3004E29DA /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E1FB218A1D4F4EE3004E29DA /* Shader.fsh */; };
+		E1FB218D1D4F4EE3004E29DA /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E1FB218B1D4F4EE3004E29DA /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		3C6CF6F01D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVPlayerWithOpenGLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6CF6F41D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerWithOpenGLUITests.m; sourceTree = "<group>"; };
 		3C6CF6F61D4E2F1C001D6287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1FB21801D4F403B004E29DA /* APLEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APLEAGLView.h; path = OpenGLPlayerView/APLEAGLView.h; sourceTree = "<group>"; };
+		E1FB21811D4F403B004E29DA /* APLEAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APLEAGLView.m; path = OpenGLPlayerView/APLEAGLView.m; sourceTree = "<group>"; };
+		E1FB21841D4F4087004E29DA /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerView.h; path = AVPlayerView/PlayerView.h; sourceTree = "<group>"; };
+		E1FB21851D4F4087004E29DA /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerView.m; path = AVPlayerView/PlayerView.m; sourceTree = "<group>"; };
+		E1FB218A1D4F4EE3004E29DA /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		E1FB218B1D4F4EE3004E29DA /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,8 @@
 		3C6CF6CE1D4E2F1C001D6287 /* AVPlayerWithOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				E1FB21871D4F408B004E29DA /* AVPlayerView */,
+				E1FB21831D4F406C004E29DA /* OpenGLPlayerView */,
 				3C6CF6D21D4E2F1C001D6287 /* AppDelegate.h */,
 				3C6CF6D31D4E2F1C001D6287 /* AppDelegate.m */,
 				3C6CF6D51D4E2F1C001D6287 /* ViewController.h */,
@@ -138,6 +150,26 @@
 				3C6CF6F61D4E2F1C001D6287 /* Info.plist */,
 			);
 			path = AVPlayerWithOpenGLUITests;
+			sourceTree = "<group>";
+		};
+		E1FB21831D4F406C004E29DA /* OpenGLPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				E1FB218A1D4F4EE3004E29DA /* Shader.fsh */,
+				E1FB218B1D4F4EE3004E29DA /* Shader.vsh */,
+				E1FB21801D4F403B004E29DA /* APLEAGLView.h */,
+				E1FB21811D4F403B004E29DA /* APLEAGLView.m */,
+			);
+			name = OpenGLPlayerView;
+			sourceTree = "<group>";
+		};
+		E1FB21871D4F408B004E29DA /* AVPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				E1FB21841D4F4087004E29DA /* PlayerView.h */,
+				E1FB21851D4F4087004E29DA /* PlayerView.m */,
+			);
+			name = AVPlayerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +278,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1FB218C1D4F4EE3004E29DA /* Shader.fsh in Resources */,
 				3C6CF6DF1D4E2F1C001D6287 /* LaunchScreen.storyboard in Resources */,
 				3C6CF6DC1D4E2F1C001D6287 /* Assets.xcassets in Resources */,
 				3C6CF6DA1D4E2F1C001D6287 /* Main.storyboard in Resources */,
+				E1FB218D1D4F4EE3004E29DA /* Shader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6CF6D71D4E2F1C001D6287 /* ViewController.m in Sources */,
+				E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */,
 				3C6CF6D41D4E2F1C001D6287 /* AppDelegate.m in Sources */,
 				3C6CF6D11D4E2F1C001D6287 /* main.m in Sources */,
+				E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +535,7 @@
 				3C6CF6FB1D4E2F1C001D6287 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C6CF6FC1D4E2F1C001D6287 /* Build configuration list for PBXNativeTarget "AVPlayerWithOpenGLTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +544,7 @@
 				3C6CF6FE1D4E2F1C001D6287 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C6CF6FF1D4E2F1C001D6287 /* Build configuration list for PBXNativeTarget "AVPlayerWithOpenGLUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +553,7 @@
 				3C6CF7011D4E2F1C001D6287 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
