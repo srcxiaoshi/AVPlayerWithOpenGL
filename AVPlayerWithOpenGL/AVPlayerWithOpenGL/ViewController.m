@@ -61,7 +61,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 
 
 }
-
+//作为一个触发监控口，即视频准备好，设置frame，所以只执行一次
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context == AVPlayerItemStatusContext) {
@@ -70,7 +70,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
             case AVPlayerItemStatusUnknown:
                 break;
             case AVPlayerItemStatusReadyToPlay:
-                self.OpenGLPlayerView.presentationRect = [[self.playerView.player currentItem] presentationSize];
+                self.OpenGLPlayerView.presentationRect = [[self.playerView.player currentItem] presentationSize];//这里不影响内存
                 break;
             case AVPlayerItemStatusFailed:
                 [self stopLoadingAnimationAndHandleError:[[self.playerView.player currentItem] error]];
@@ -95,7 +95,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
     
     //数据源
     self.playItem= [AVPlayerItem playerItemWithURL:URL];
-    [self addObserver:self forKeyPath:@"playerView.player.currentItem.status" options:NSKeyValueObservingOptionNew context:AVPlayerItemStatusContext];
+    [self.playerView.player addObserver:self forKeyPath:@"currentItem.status" options:NSKeyValueObservingOptionNew context:AVPlayerItemStatusContext];
     AVAsset *asset = [self.playItem asset];
     
     [asset loadValuesAsynchronouslyForKeys:@[@"tracks"] completionHandler:^{
@@ -103,7 +103,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
         if ([asset statusOfValueForKey:@"tracks" error:nil] == AVKeyValueStatusLoaded) {
             NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
             if ([tracks count] > 0) {
-                // 选择 video Track.
+                // 选择 video Track.就 1 个Track
                 AVAssetTrack *videoTrack = [tracks objectAtIndex:0];
                 [videoTrack loadValuesAsynchronouslyForKeys:@[@"preferredTransform"] completionHandler:^{
                     
@@ -112,8 +112,6 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
                         
                         //旋转变化
                         self.OpenGLPlayerView.preferredRotation = -1 * atan2(preferredTransform.b, preferredTransform.a);
-                        
-                        [self addDidPlayToEndTimeNotificationForPlayerItem:self.playItem];
                         
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [self.playItem addOutput:self.videoOutput];
@@ -146,14 +144,11 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 - (void)displayLinkCallback:(CADisplayLink *)sender
 {
     /*
-     The callback gets called once every Vsync.
-     Using the display link's timestamp and duration we can compute the next time the screen will be refreshed, and copy the pixel buffer for that time
-     This pixel buffer can then be processed and later rendered on screen.
-     同步，获取视频 画帧， 稍后绘制到屏幕上，使用OpenGL ES
+      同步，获取视频 画帧， 稍后绘制到屏幕上，使用OpenGL ES
      */
     CMTime outputItemTime = kCMTimeInvalid;
     
-    // Calculate the nextVsync time which is when the screen will be refreshed next.
+    // 计算下一次刷新时间戳
     CFTimeInterval nextVSync = ([sender timestamp] + [sender duration]);
     
     outputItemTime = [[self videoOutput] itemTimeForHostTime:nextVSync];
@@ -173,27 +168,13 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 #pragma mark - AVPlayerItemOutputPullDelegate
 - (void)outputMediaDataWillChange:(AVPlayerItemOutput *)sender
 {
-    // Restart display link.
+    // 重新开始 display link.
     [[self displayLink] setPaused:NO];
 }
 
-- (void)addDidPlayToEndTimeNotificationForPlayerItem:(AVPlayerItem *)item
-{
-    if (_notificationToken)
-        _notificationToken = nil;
-    
-    /*
-     Setting actionAtItemEnd to None prevents the movie from getting paused at item end. A very simplistic, and not gapless, looped playback.
-     */
-    self.playerView.player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
-    _notificationToken = [[NSNotificationCenter defaultCenter] addObserverForName:AVPlayerItemDidPlayToEndTimeNotification object:item queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        // Simple item playback rewind.
-        [[self.playerView.player currentItem] seekToTime:kCMTimeZero];
-    }];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 
