@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
-
-@interface APLEAGLView : UIView
+#import <GLKit/GLKit.h>
+@interface APLEAGLView : GLKView
 
 @property GLfloat preferredRotation;
 @property CGSize presentationRect;

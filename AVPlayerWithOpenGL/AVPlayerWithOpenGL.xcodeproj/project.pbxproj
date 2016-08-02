@@ -15,6 +15,7 @@
 		3C6CF6DF1D4E2F1C001D6287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CF6DD1D4E2F1C001D6287 /* LaunchScreen.storyboard */; };
 		3C6CF6EA1D4E2F1C001D6287 /* AVPlayerWithOpenGLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6E91D4E2F1C001D6287 /* AVPlayerWithOpenGLTests.m */; };
 		3C6CF6F51D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6F41D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.m */; };
+		E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */; };
 		E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21811D4F403B004E29DA /* APLEAGLView.m */; };
 		E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21851D4F4087004E29DA /* PlayerView.m */; };
 		E1FB218C1D4F4EE3004E29DA /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E1FB218A1D4F4EE3004E29DA /* Shader.fsh */; };
@@ -55,6 +56,8 @@
 		3C6CF6F01D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVPlayerWithOpenGLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6CF6F41D4E2F1C001D6287 /* AVPlayerWithOpenGLUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerWithOpenGLUITests.m; sourceTree = "<group>"; };
 		3C6CF6F61D4E2F1C001D6287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLPlayerViewController.h; path = AVPlayerView/OpenGLPlayerViewController.h; sourceTree = "<group>"; };
+		E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLPlayerViewController.m; path = AVPlayerView/OpenGLPlayerViewController.m; sourceTree = "<group>"; };
 		E1FB21801D4F403B004E29DA /* APLEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APLEAGLView.h; path = OpenGLPlayerView/APLEAGLView.h; sourceTree = "<group>"; };
 		E1FB21811D4F403B004E29DA /* APLEAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APLEAGLView.m; path = OpenGLPlayerView/APLEAGLView.m; sourceTree = "<group>"; };
 		E1FB21841D4F4087004E29DA /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerView.h; path = AVPlayerView/PlayerView.h; sourceTree = "<group>"; };
@@ -115,8 +118,6 @@
 				E1FB21831D4F406C004E29DA /* OpenGLPlayerView */,
 				3C6CF6D21D4E2F1C001D6287 /* AppDelegate.h */,
 				3C6CF6D31D4E2F1C001D6287 /* AppDelegate.m */,
-				3C6CF6D51D4E2F1C001D6287 /* ViewController.h */,
-				3C6CF6D61D4E2F1C001D6287 /* ViewController.m */,
 				3C6CF6D81D4E2F1C001D6287 /* Main.storyboard */,
 				3C6CF6DB1D4E2F1C001D6287 /* Assets.xcassets */,
 				3C6CF6DD1D4E2F1C001D6287 /* LaunchScreen.storyboard */,
@@ -159,6 +160,10 @@
 				E1FB218B1D4F4EE3004E29DA /* Shader.vsh */,
 				E1FB21801D4F403B004E29DA /* APLEAGLView.h */,
 				E1FB21811D4F403B004E29DA /* APLEAGLView.m */,
+				3C6CF6D51D4E2F1C001D6287 /* ViewController.h */,
+				3C6CF6D61D4E2F1C001D6287 /* ViewController.m */,
+				E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */,
+				E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */,
 			);
 			name = OpenGLPlayerView;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			files = (
 				3C6CF6D71D4E2F1C001D6287 /* ViewController.m in Sources */,
 				E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */,
+				E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */,
 				3C6CF6D41D4E2F1C001D6287 /* AppDelegate.m in Sources */,
 				3C6CF6D11D4E2F1C001D6287 /* main.m in Sources */,
 				E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "OpenGLPlayerViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    OpenGLPlayerViewController * viewCon=[[OpenGLPlayerViewController alloc]init];
+    UINavigationController *navc=[[UINavigationController alloc]initWithRootViewController:viewCon];
+    self.window.rootViewController=navc;
+    
+    
     return YES;
 }
 
