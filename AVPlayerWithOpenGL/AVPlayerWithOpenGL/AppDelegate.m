@@ -6,8 +6,19 @@
 //  Copyright © 2016年 史瑞昌. All rights reserved.
 //
 
+
+
+
+
 #import "AppDelegate.h"
+
+
+
+//测试使用的
 #import "OpenGLPlayerViewController.h"
+#import "UNNotificationViewController.h"
+#import "AVPlayerViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,13 +30,14 @@
     // Override point for customization after application launch.
     
     
-    OpenGLPlayerViewController * viewCon=[[OpenGLPlayerViewController alloc]init];
+    AVPlayerViewController * viewCon=[[AVPlayerViewController alloc]init];
     UINavigationController *navc=[[UINavigationController alloc]initWithRootViewController:viewCon];
     self.window.rootViewController=navc;
-    
-    
+
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
