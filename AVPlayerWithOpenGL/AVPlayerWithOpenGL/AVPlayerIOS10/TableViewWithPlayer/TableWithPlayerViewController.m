@@ -55,8 +55,8 @@
                 reuseIdentifier:TableSampleIdentifier];
     }
     //定制cell
-    cell.frame=CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    
+    cell.frame=CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64);
+    cell.backgroundColor=[UIColor blueColor];
     NSURL *url=[[NSURL alloc]initWithString:@"http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"];
     self.playerView=[[PlayerView alloc]initWithFillMode:@""];
     self.playItem=[[AVPlayerItem alloc]initWithURL:url];
