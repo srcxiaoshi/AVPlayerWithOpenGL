@@ -544,7 +544,7 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -560,7 +560,7 @@
             startingLineNumber = "55"
             endingLineNumber = "55"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -576,7 +576,7 @@
             startingLineNumber = "94"
             endingLineNumber = "94"
             landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -592,7 +592,7 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "-didReceiveMemoryWarning"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
