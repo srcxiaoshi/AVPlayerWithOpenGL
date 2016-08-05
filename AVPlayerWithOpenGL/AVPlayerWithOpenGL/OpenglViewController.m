@@ -6,14 +6,14 @@
 //  Copyright © 2016年 史瑞昌. All rights reserved.
 //
 # define ONE_FRAME_DURATION 0.04
-#import "ViewController.h"
+#import "OpenglViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlayerView.h"
 #import "APLEAGLView.h"
 
 static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 
-@interface ViewController ()<AVPlayerItemOutputPullDelegate>
+@interface OpenglViewController ()<AVPlayerItemOutputPullDelegate>
 {
     
     
@@ -28,7 +28,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 @property(nonatomic,strong) id notificationToken;
 @end
 
-@implementation ViewController
+@implementation OpenglViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

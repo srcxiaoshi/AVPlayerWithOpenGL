@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C6CF6D11D4E2F1C001D6287 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6D01D4E2F1C001D6287 /* main.m */; };
 		3C6CF6D41D4E2F1C001D6287 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6D31D4E2F1C001D6287 /* AppDelegate.m */; };
-		3C6CF6D71D4E2F1C001D6287 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6D61D4E2F1C001D6287 /* ViewController.m */; };
+		3C6CF6D71D4E2F1C001D6287 /* OpenglViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CF6D61D4E2F1C001D6287 /* OpenglViewController.m */; };
 		3C6CF6DA1D4E2F1C001D6287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CF6D81D4E2F1C001D6287 /* Main.storyboard */; };
 		3C6CF6DC1D4E2F1C001D6287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CF6DB1D4E2F1C001D6287 /* Assets.xcassets */; };
 		3C6CF6DF1D4E2F1C001D6287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CF6DD1D4E2F1C001D6287 /* LaunchScreen.storyboard */; };
@@ -46,6 +46,7 @@
 		E13D88F81D5217E50075167F /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13D88F71D5217E50075167F /* NotificationViewController.m */; };
 		E13D88FB1D5217E50075167F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13D88F91D5217E50075167F /* MainInterface.storyboard */; };
 		E13D88FF1D5217E50075167F /* UNNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E13D88F21D5217E50075167F /* UNNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E15B00A11D5481AF00A41227 /* TableWithPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E15B00A01D5481AF00A41227 /* TableWithPlayerViewController.m */; };
 		E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */; };
 		E1FAAF231D52DDC200593525 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FAAF221D52DDC200593525 /* AVPlayerViewController.m */; };
 		E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21811D4F403B004E29DA /* APLEAGLView.m */; };
@@ -105,8 +106,8 @@
 		3C6CF6D01D4E2F1C001D6287 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C6CF6D21D4E2F1C001D6287 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C6CF6D31D4E2F1C001D6287 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C6CF6D51D4E2F1C001D6287 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3C6CF6D61D4E2F1C001D6287 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C6CF6D51D4E2F1C001D6287 /* OpenglViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenglViewController.h; sourceTree = "<group>"; };
+		3C6CF6D61D4E2F1C001D6287 /* OpenglViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenglViewController.m; sourceTree = "<group>"; };
 		3C6CF6D91D4E2F1C001D6287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C6CF6DB1D4E2F1C001D6287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C6CF6DE1D4E2F1C001D6287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -169,6 +170,8 @@
 		E13D88F71D5217E50075167F /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		E13D88FA1D5217E50075167F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E13D88FC1D5217E50075167F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E15B009F1D5481AF00A41227 /* TableWithPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableWithPlayerViewController.h; path = AVPlayerIOS10/TableViewWithPlayer/TableWithPlayerViewController.h; sourceTree = "<group>"; };
+		E15B00A01D5481AF00A41227 /* TableWithPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableWithPlayerViewController.m; path = AVPlayerIOS10/TableViewWithPlayer/TableWithPlayerViewController.m; sourceTree = "<group>"; };
 		E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLPlayerViewController.h; path = AVPlayerView/OpenGLPlayerViewController.h; sourceTree = "<group>"; };
 		E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLPlayerViewController.m; path = AVPlayerView/OpenGLPlayerViewController.m; sourceTree = "<group>"; };
 		E1FAAF211D52DDC200593525 /* AVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVPlayerViewController.h; path = AVPlayerIOS10/AVPlayerViewController.h; sourceTree = "<group>"; };
@@ -376,9 +379,19 @@
 			path = UNNotificationExtension;
 			sourceTree = "<group>";
 		};
+		E15B00981D547FEC00A41227 /* TableViewWithPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E15B009F1D5481AF00A41227 /* TableWithPlayerViewController.h */,
+				E15B00A01D5481AF00A41227 /* TableWithPlayerViewController.m */,
+			);
+			name = TableViewWithPlayer;
+			sourceTree = "<group>";
+		};
 		E1FAAF201D52DBF000593525 /* AVPlayerIOS10 */ = {
 			isa = PBXGroup;
 			children = (
+				E15B00981D547FEC00A41227 /* TableViewWithPlayer */,
 				E1FAAF211D52DDC200593525 /* AVPlayerViewController.h */,
 				E1FAAF221D52DDC200593525 /* AVPlayerViewController.m */,
 			);
@@ -392,8 +405,8 @@
 				E1FB218B1D4F4EE3004E29DA /* Shader.vsh */,
 				E1FB21801D4F403B004E29DA /* APLEAGLView.h */,
 				E1FB21811D4F403B004E29DA /* APLEAGLView.m */,
-				3C6CF6D51D4E2F1C001D6287 /* ViewController.h */,
-				3C6CF6D61D4E2F1C001D6287 /* ViewController.m */,
+				3C6CF6D51D4E2F1C001D6287 /* OpenglViewController.h */,
+				3C6CF6D61D4E2F1C001D6287 /* OpenglViewController.m */,
 				E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */,
 				E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */,
 				E12F04EE1D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.h */,
@@ -623,7 +636,7 @@
 				E13D88BC1D51BA5A0075167F /* UIImage+WebP.m in Sources */,
 				E12F04F01D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.m in Sources */,
 				E13D88BD1D51BA5A0075167F /* UIImageView+HighlightedWebCache.m in Sources */,
-				3C6CF6D71D4E2F1C001D6287 /* ViewController.m in Sources */,
+				3C6CF6D71D4E2F1C001D6287 /* OpenglViewController.m in Sources */,
 				E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */,
 				E1FAAF231D52DDC200593525 /* AVPlayerViewController.m in Sources */,
 				E13D88B91D51BA5A0075167F /* UIButton+WebCache.m in Sources */,
@@ -637,6 +650,7 @@
 				3C6CF6D11D4E2F1C001D6287 /* main.m in Sources */,
 				E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */,
 				E13D88BA1D51BA5A0075167F /* UIImage+GIF.m in Sources */,
+				E15B00A11D5481AF00A41227 /* TableWithPlayerViewController.m in Sources */,
 				E13D88B51D51BA5A0075167F /* SDWebImageDownloader.m in Sources */,
 				E13D88BE1D51BA5A0075167F /* UIImageView+WebCache.m in Sources */,
 				E13D88B01D51BA5A0075167F /* MKAnnotationView+WebCache.m in Sources */,

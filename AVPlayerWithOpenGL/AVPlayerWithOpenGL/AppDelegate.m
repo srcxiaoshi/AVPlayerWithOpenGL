@@ -18,7 +18,7 @@
 #import "OpenGLPlayerViewController.h"
 #import "UNNotificationViewController.h"
 #import "AVPlayerViewController.h"
-
+#import "TableWithPlayerViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -30,7 +30,7 @@
     // Override point for customization after application launch.
     
     
-    AVPlayerViewController * viewCon=[[AVPlayerViewController alloc]init];
+    TableWithPlayerViewController * viewCon=[[TableWithPlayerViewController alloc]init];
     UINavigationController *navc=[[UINavigationController alloc]initWithRootViewController:viewCon];
     self.window.rootViewController=navc;
 
