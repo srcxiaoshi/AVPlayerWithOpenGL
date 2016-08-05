@@ -13,13 +13,14 @@
 
 #import "UNNotificationViewController.h"
 #import <UserNotifications/UserNotifications.h>
-
-
+#import "UIImageView+WebCache.h"
+//测试Notification UI
+#import <UserNotificationsUI/UserNotificationsUI.h>
 @interface UNNotificationViewController ()<UNUserNotificationCenterDelegate>
 
 @property(nonatomic,strong)UILabel *label;
-@property(nonatomic,strong)UIImageView *imgView;
 
+@property(nonatomic,strong)UIImageView *imgView;
 
 @end
 
@@ -54,12 +55,16 @@
     [contentExtensionBtn addTarget:self action:@selector(sendContentExtensionNoti:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:contentExtensionBtn];
     
+    //测试动图
+    //self.imgView=[[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    //[self.view addSubview:self.imgView];
+    //[self setImageWithUrlString:@"http://e.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=b95df6f978899e5178db32107797f505/35a85edf8db1cb13c5f31917de54564e92584b1f.jpg"];
+    
 }
 
 #pragma 三个按钮事件
 - (void)sendPlainNoti:(id)sender
 {
-    _imgView.hidden = YES;
     
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
@@ -73,6 +78,7 @@
     
     //添加music
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"music" ofType:@"mp3"]];
+    //注意的是，URL必须是file URL
     UNNotificationAttachment *attach = [UNNotificationAttachment attachmentWithIdentifier:@"attachId" URL:url options:nil error:nil];
     if (attach)
     {
@@ -89,7 +95,6 @@
 }
 
 - (void)sendServiceExtensionNoti:(id)sender {
-    _imgView.hidden = YES;
     
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
@@ -120,7 +125,6 @@
 
 - (void)sendContentExtensionNoti:(id)sender
 {
-    _imgView.hidden = YES;
     
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     
@@ -198,6 +202,19 @@
     
 }
 
+//
+- (void)setImageWithUrlString:(NSString *)urlString
+{
+    if (urlString && [urlString isKindOfClass:[NSString class]] && [urlString length] > 0) {
+        [_imgView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"jpgtest.jpg"] options:SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+        }];
+    }
+    else
+    {
+        [_imgView setImage:[UIImage imageNamed:@"jpgtest.jpg"]];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

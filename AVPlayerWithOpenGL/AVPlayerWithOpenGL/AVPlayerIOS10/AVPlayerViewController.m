@@ -68,7 +68,7 @@
     
     // Perform any other set up operations like setting AVPlayerItemDataOutputs on the looping item replicas
     // Start playback
-    [player play];
+    //[player play];
     // itemToLoop between 5s and 7s plays repeatedly
     // To end the looping
     //[looper disableLooping];
