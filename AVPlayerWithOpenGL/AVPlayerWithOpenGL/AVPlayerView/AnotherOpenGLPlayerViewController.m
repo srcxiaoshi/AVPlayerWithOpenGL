@@ -1,67 +1,127 @@
 //
 //  AnotherOpenGLPlayerViewController.m
 //  AVPlayerWithOpenGL
-//
+//  该文件，使用glDrawElements 绘制
+//  glDrawArrays传输或指定的数据是最终的真实数据,在绘制时效能更好
+//  而glDrawElements指定的是真实数据的调用索引,在内存/显存占用上更节省
 //  Created by baidu on 16/8/2.
 //  Copyright © 2016年 史瑞昌. All rights reserved.
 //
 
 #import "AnotherOpenGLPlayerViewController.h"
-#import <OpenGLES/ES2/gl.h>
-#import <OpenGLES/ES2/glext.h>
 
-// Color Conversion Constants (YUV to RGB) including adjustment from 16-235/16-240 (video range)
 
-// BT.709, which is the standard for HDTV.
-static const GLfloat kColorConversion709[] = {
-    1.164,  1.164, 1.164,
-    0.0, -0.213, 2.112,
-    1.793, -0.533,   0.0,
-};
 
 @interface AnotherOpenGLPlayerViewController ()
 
-@property (strong, nonatomic) EAGLContext *context;
-@property (assign, nonatomic) GLuint *program;
-@property (strong, nonatomic) CADisplayLink* displayLink;
-@property(assign,nonatomic)const GLfloat *preferredConversion;
+@property (nonatomic , strong) EAGLContext* mContext;
+@property (nonatomic , strong) GLKBaseEffect* mEffect;
 
+@property (nonatomic , assign) int mCount;
 @end
 
 @implementation AnotherOpenGLPlayerViewController
-
+{
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    //初始化OpenGL 2.0上下文
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
-    if (!self.context) {
-        NSLog(@"Failed to create ES context");
-    }
+    //新建OpenGLES 上下文
+    self.mContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2]; //2.0，还有1.0和3.0
+    GLKView* view = (GLKView *)self.view; //转化view
+    view.context = self.mContext;
+    view.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;  //颜色缓冲区格式
+    [EAGLContext setCurrentContext:self.mContext];
     
-    GLKView *view = (GLKView *)self.view;
-    view.context = self.context;
-    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-    view.enableSetNeedsDisplay = NO;
-    self.preferredFramesPerSecond = 0.0f;//帧率,设置成0，系统不再自行渲染，而是走displaylink
+    
+    //顶点数据，前三个是顶点坐标，后面两个是纹理坐标
+    GLfloat squareVertexData[] =
+    {
+        0.5, -0.5, 0.0f,    1.0f, 0.0f, //右下
+        -0.5, 0.5, 0.0f,    0.0f, 1.0f, //左上
+        -0.5, -0.5, 0.0f,   0.0f, 0.0f, //左下
+        0.5, 0.5, -0.0f,    1.0f, 1.0f, //右上
+    };
+    
+    //顶点索引
+    GLuint indices[] =
+    {
+        0, 1, 2,
+        1, 3, 0
+    };
+    self.mCount = sizeof(indices) / sizeof(GLuint);
+    
+    
+    //顶点数据缓存
+    GLuint buffer;
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(squareVertexData), squareVertexData, GL_STATIC_DRAW);
+    
+    GLuint index;
+    glGenBuffers(1, &index);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    
+    glEnableVertexAttribArray(GLKVertexAttribPosition); //顶点数据缓存
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (GLfloat *)NULL + 0);
+    
+    
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord0); //纹理
+    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (GLfloat *)NULL + 3);
+    
+    
 
-    
-    // Set the default conversion to BT.709, which is the standard for HDTV.
-    self.preferredConversion = kColorConversion709;
- 
-//    [self setupGL];
-//    [self startDeviceMotion];
-//    [self startRender];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/**
+ *  场景数据变化,先调用update方法，后调用drawInRect方法
+ */
+- (void)update {
+    
+    
+    
+    //纹理贴图
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"for_test" ofType:@"png"];
+    NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:@(1), GLKTextureLoaderOriginBottomLeft, nil];//GLKTextureLoaderOriginBottomLeft 纹理坐标系是相反的
+    GLKTextureInfo* textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
+    //
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //着色器
+    self.mEffect = [[GLKBaseEffect alloc] init];
+    self.mEffect.texture2d0.enabled = GL_TRUE;
+    self.mEffect.texture2d0.name = textureInfo.name;
+}
+
+
+/**
+ *  渲染场景代码，该方法在update后调用
+ */
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);//背景色
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    //启动着色器
+    [self.mEffect prepareToDraw];
+    glDrawElements(GL_TRIANGLES, self.mCount, GL_UNSIGNED_INT, 0);
+    
 }
 
 

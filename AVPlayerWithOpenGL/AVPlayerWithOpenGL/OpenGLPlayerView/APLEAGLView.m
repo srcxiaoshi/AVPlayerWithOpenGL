@@ -5,7 +5,10 @@
  Abstract:
  This class contains an UIView backed by a CAEAGLLayer. It handles rendering input textures to the view. The object loads, compiles and links the fragment and vertex shader to be used during rendering.
  */
-
+/*
+    glDrawArrays传输或指定的数据是最终的真实数据,在绘制时效能更好
+    而glDrawElements指定的是真实数据的调用索引,在内存/显存占用上更节省
+ */
 #import "APLEAGLView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVUtilities.h>

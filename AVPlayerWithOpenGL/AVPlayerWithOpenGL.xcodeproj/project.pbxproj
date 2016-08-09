@@ -65,7 +65,11 @@
 		E13D88F81D5217E50075167F /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13D88F71D5217E50075167F /* NotificationViewController.m */; };
 		E13D88FB1D5217E50075167F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13D88F91D5217E50075167F /* MainInterface.storyboard */; };
 		E13D88FF1D5217E50075167F /* UNNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E13D88F21D5217E50075167F /* UNNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E188AB2E1D59A6730007BE95 /* for_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E188AB2D1D59A6730007BE95 /* for_test.jpg */; };
 		E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */; };
+		E1EDBF291D59C330008AB5C1 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EDBF281D59C330008AB5C1 /* OpenGLView.m */; };
+		E1EDBF2D1D59C8FF008AB5C1 /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */; };
+		E1EDBF2E1D59C8FF008AB5C1 /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E1EDBF2C1D59C8FF008AB5C1 /* shaderv.vsh */; };
 		E1FAAF231D52DDC200593525 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FAAF221D52DDC200593525 /* AVPlayerViewController.m */; };
 		E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21811D4F403B004E29DA /* APLEAGLView.m */; };
 		E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FB21851D4F4087004E29DA /* PlayerView.m */; };
@@ -231,8 +235,13 @@
 		E13D88F71D5217E50075167F /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		E13D88FA1D5217E50075167F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E13D88FC1D5217E50075167F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E188AB2D1D59A6730007BE95 /* for_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = for_test.jpg; sourceTree = "<group>"; };
 		E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLPlayerViewController.h; path = AVPlayerView/OpenGLPlayerViewController.h; sourceTree = "<group>"; };
 		E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLPlayerViewController.m; path = AVPlayerView/OpenGLPlayerViewController.m; sourceTree = "<group>"; };
+		E1EDBF271D59C330008AB5C1 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLView.h; path = OpenGLPlayerView/OpenGLView.h; sourceTree = "<group>"; };
+		E1EDBF281D59C330008AB5C1 /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLView.m; path = OpenGLPlayerView/OpenGLView.m; sourceTree = "<group>"; };
+		E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderf.fsh; sourceTree = "<group>"; };
+		E1EDBF2C1D59C8FF008AB5C1 /* shaderv.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderv.vsh; sourceTree = "<group>"; };
 		E1FAAF211D52DDC200593525 /* AVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVPlayerViewController.h; path = AVPlayerIOS10/AVPlayerViewController.h; sourceTree = "<group>"; };
 		E1FAAF221D52DDC200593525 /* AVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVPlayerViewController.m; path = AVPlayerIOS10/AVPlayerViewController.m; sourceTree = "<group>"; };
 		E1FB21801D4F403B004E29DA /* APLEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APLEAGLView.h; path = OpenGLPlayerView/APLEAGLView.h; sourceTree = "<group>"; };
@@ -500,6 +509,19 @@
 			path = UNNotificationExtension;
 			sourceTree = "<group>";
 		};
+		E1EDBF2A1D59C8E3008AB5C1 /* NOGLK */ = {
+			isa = PBXGroup;
+			children = (
+				E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */,
+				E1EDBF2C1D59C8FF008AB5C1 /* shaderv.vsh */,
+				E12F04EE1D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.h */,
+				E12F04EF1D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.m */,
+				E1EDBF271D59C330008AB5C1 /* OpenGLView.h */,
+				E1EDBF281D59C330008AB5C1 /* OpenGLView.m */,
+			);
+			name = NOGLK;
+			sourceTree = "<group>";
+		};
 		E1FAAF201D52DBF000593525 /* AVPlayerIOS10 */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +534,8 @@
 		E1FB21831D4F406C004E29DA /* OpenGLPlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				E1EDBF2A1D59C8E3008AB5C1 /* NOGLK */,
+				E188AB2D1D59A6730007BE95 /* for_test.jpg */,
 				E1FB218A1D4F4EE3004E29DA /* Shader.fsh */,
 				E1FB218B1D4F4EE3004E29DA /* Shader.vsh */,
 				E1FB21801D4F403B004E29DA /* APLEAGLView.h */,
@@ -520,8 +544,6 @@
 				3C6CF6D61D4E2F1C001D6287 /* ViewController.m */,
 				E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */,
 				E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */,
-				E12F04EE1D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.h */,
-				E12F04EF1D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.m */,
 			);
 			name = OpenGLPlayerView;
 			sourceTree = "<group>";
@@ -693,9 +715,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1FB218C1D4F4EE3004E29DA /* Shader.fsh in Resources */,
+				E188AB2E1D59A6730007BE95 /* for_test.jpg in Resources */,
 				E13D88D81D51EDFE0075167F /* jpgtest.jpg in Resources */,
+				E1EDBF2E1D59C8FF008AB5C1 /* shaderv.vsh in Resources */,
 				E13D88DB1D51F7F10075167F /* no.mp4 in Resources */,
 				3C6CF6DF1D4E2F1C001D6287 /* LaunchScreen.storyboard in Resources */,
+				E1EDBF2D1D59C8FF008AB5C1 /* shaderf.fsh in Resources */,
 				3C6CF6DC1D4E2F1C001D6287 /* Assets.xcassets in Resources */,
 				E13D88DD1D5213890075167F /* music.mp3 in Resources */,
 				3C6CF6DA1D4E2F1C001D6287 /* Main.storyboard in Resources */,
@@ -763,6 +788,7 @@
 				E13D88BB1D51BA5A0075167F /* UIImage+MultiFormat.m in Sources */,
 				E106198E1D5476EC008F3BBF /* PlayerTableViewCell.m in Sources */,
 				E13D88831D518E6D0075167F /* UNNotificationViewController.m in Sources */,
+				E1EDBF291D59C330008AB5C1 /* OpenGLView.m in Sources */,
 				E13D88B21D51BA5A0075167F /* SDImageCache.m in Sources */,
 				3C6CF6D11D4E2F1C001D6287 /* main.m in Sources */,
 				E1FB21861D4F4087004E29DA /* PlayerView.m in Sources */,

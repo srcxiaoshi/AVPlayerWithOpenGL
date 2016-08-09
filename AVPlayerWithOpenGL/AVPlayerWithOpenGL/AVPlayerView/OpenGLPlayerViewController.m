@@ -4,7 +4,7 @@
 //
 //  Created by baidu on 16/8/2.
 //  Copyright © 2016年 史瑞昌. All rights reserved.
-//
+//  本VC继承了GLKViewController，可以直接使用封装的一些特性
 # define ONE_FRAME_DURATION 0.03
 #import "OpenGLPlayerViewController.h"
 #import "APLEAGLView.h"

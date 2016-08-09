@@ -4,7 +4,7 @@
 //
 //  Created by 史瑞昌 on 16/7/31.
 //  Copyright © 2016年 史瑞昌. All rights reserved.
-//
+//  该VC继承的是UIViewController
 # define ONE_FRAME_DURATION 0.04
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>

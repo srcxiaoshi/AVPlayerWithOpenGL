@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface TableViewWithPlayerViewController : ViewController
+@interface TableViewWithPlayerViewController : UIViewController
 
 @end
