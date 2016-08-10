@@ -238,6 +238,7 @@
 		E188AB2D1D59A6730007BE95 /* for_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = for_test.jpg; sourceTree = "<group>"; };
 		E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLPlayerViewController.h; path = AVPlayerView/OpenGLPlayerViewController.h; sourceTree = "<group>"; };
 		E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLPlayerViewController.m; path = AVPlayerView/OpenGLPlayerViewController.m; sourceTree = "<group>"; };
+		E1E14ABE1D5B071600223780 /* Endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Endian.h; path = OpenGLPlayerView/Endian.h; sourceTree = "<group>"; };
 		E1EDBF271D59C330008AB5C1 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLView.h; path = OpenGLPlayerView/OpenGLView.h; sourceTree = "<group>"; };
 		E1EDBF281D59C330008AB5C1 /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLView.m; path = OpenGLPlayerView/OpenGLView.m; sourceTree = "<group>"; };
 		E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderf.fsh; sourceTree = "<group>"; };
@@ -518,6 +519,7 @@
 				E12F04EF1D50CBC7004C78BE /* AnotherOpenGLPlayerViewController.m */,
 				E1EDBF271D59C330008AB5C1 /* OpenGLView.h */,
 				E1EDBF281D59C330008AB5C1 /* OpenGLView.m */,
+				E1E14ABE1D5B071600223780 /* Endian.h */,
 			);
 			name = NOGLK;
 			sourceTree = "<group>";
