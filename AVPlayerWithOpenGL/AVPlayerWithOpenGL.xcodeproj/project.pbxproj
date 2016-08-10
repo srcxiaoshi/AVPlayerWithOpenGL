@@ -67,6 +67,7 @@
 		E13D88FF1D5217E50075167F /* UNNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E13D88F21D5217E50075167F /* UNNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E188AB2E1D59A6730007BE95 /* for_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E188AB2D1D59A6730007BE95 /* for_test.jpg */; };
 		E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */; };
+		E1E14AC01D5B368000223780 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E14ABF1D5B368000223780 /* OpenGLES.framework */; };
 		E1EDBF291D59C330008AB5C1 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EDBF281D59C330008AB5C1 /* OpenGLView.m */; };
 		E1EDBF2D1D59C8FF008AB5C1 /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */; };
 		E1EDBF2E1D59C8FF008AB5C1 /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E1EDBF2C1D59C8FF008AB5C1 /* shaderv.vsh */; };
@@ -239,6 +240,7 @@
 		E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLPlayerViewController.h; path = AVPlayerView/OpenGLPlayerViewController.h; sourceTree = "<group>"; };
 		E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLPlayerViewController.m; path = AVPlayerView/OpenGLPlayerViewController.m; sourceTree = "<group>"; };
 		E1E14ABE1D5B071600223780 /* Endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Endian.h; path = OpenGLPlayerView/Endian.h; sourceTree = "<group>"; };
+		E1E14ABF1D5B368000223780 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E1EDBF271D59C330008AB5C1 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLView.h; path = OpenGLPlayerView/OpenGLView.h; sourceTree = "<group>"; };
 		E1EDBF281D59C330008AB5C1 /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLView.m; path = OpenGLPlayerView/OpenGLView.m; sourceTree = "<group>"; };
 		E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderf.fsh; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E14AC01D5B368000223780 /* OpenGLES.framework in Frameworks */,
 				E13D88881D518E940075167F /* UserNotificationsUI.framework in Frameworks */,
 				E13D88861D518E8E0075167F /* UserNotifications.framework in Frameworks */,
 			);
@@ -436,6 +439,7 @@
 		E13D88841D518E8E0075167F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1E14ABF1D5B368000223780 /* OpenGLES.framework */,
 				E13D88871D518E940075167F /* UserNotificationsUI.framework */,
 				E13D88851D518E8E0075167F /* UserNotifications.framework */,
 			);

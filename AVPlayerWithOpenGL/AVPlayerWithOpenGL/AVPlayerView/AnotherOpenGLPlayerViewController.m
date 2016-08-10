@@ -10,6 +10,8 @@
 # define ONE_FRAME_DURATION 0.04
 #import "AnotherOpenGLPlayerViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <OpenGLES/ES2/glext.h>
 
 static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 
@@ -24,6 +26,8 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 @property (nonatomic , strong) GLKBaseEffect* mEffect;
 @property(nonatomic,strong)GLKTextureInfo* textureInfo;//声明，但是在获取数据时初始化
 @property (nonatomic , assign) int mCount;
+@property(nonatomic,assign) GLuint buffer;
+@property(nonatomic,assign) GLuint index;
 
 
 //AVFoundation
@@ -31,10 +35,8 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 @property(nonatomic,strong)AVPlayerItemVideoOutput *videoOutput;
 @property(nonatomic,strong)dispatch_queue_t myVideoOutputQueue;
 @property(nonatomic,strong)AVPlayer *avPlayer;
-@property(nonatomic,strong)UIImage *img;
 
-@property(nonatomic,assign) GLuint buffer;
-@property(nonatomic,assign) GLuint index;
+
 
 @end
 
@@ -92,7 +94,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
     [EAGLContext setCurrentContext:self.mContext];
     
     //VC的刷新频率
-    self.preferredFramesPerSecond = 60; // 设置刷新的频率，每秒多少次，默认是30次
+    self.preferredFramesPerSecond = 30; // 设置刷新的频率，每秒多少次，默认是30次
     
     //顶点数据，前三个是顶点坐标，后面两个是纹理坐标,因为图是倒着的，调整了对角的坐标；
     //该矩阵就是贴的图和真实坐标的映射，所以这个才是360真正的需要修改的地方，纹理坐标是0，1之间的比例，左下角是(0,0)，右上角啊是(1,1)
@@ -181,7 +183,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
  *  场景数据变化,先调用update方法，后调用drawInRect方法
  */
 - (void)update {
-
+    //旋转，运动等操作，涉及到计算的都在这里，主要是矩阵变换
     
 }
 
@@ -191,7 +193,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
 #pragma GLKViewDelegate
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     
-    glClearColor(0.3f, 0.6f, 1.0f, 1.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     if ([[self videoOutput] hasNewPixelBufferForItemTime:self.playItem.currentTime])
@@ -221,10 +223,10 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
                                                                             pixelBuffer,
                                                                             NULL,
                                                                             GL_TEXTURE_2D,
-                                                                            GL_LUMINANCE,
+                                                                            GL_ALPHA32F_EXT,
                                                                             frameWidth,
                                                                             frameHeight,
-                                                                            GL_LUMINANCE,
+                                                                            GL_ALPHA32F_EXT,
                                                                             GL_UNSIGNED_BYTE,
                                                                             0,
                                                                             &_lumaTexture);//亮度
@@ -245,10 +247,10 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
                                                                    pixelBuffer,
                                                                    NULL,
                                                                    GL_TEXTURE_2D,
-                                                                   GL_LUMINANCE_ALPHA,
+                                                                   GL_BGRA_EXT,
                                                                    frameWidth/2,
                                                                    frameHeight/2,
-                                                                   GL_LUMINANCE_ALPHA,
+                                                                   GL_BGRA_EXT,
                                                                    GL_UNSIGNED_BYTE,
                                                                    1,
                                                                    &_chromaTexture);//色彩深度
@@ -268,7 +270,7 @@ static void *AVPlayerItemStatusContext = &AVPlayerItemStatusContext;
                 
                 
                 
-            if (pixelBuffer != NULL) {  // 不加，会导致纹理没释放，id 不断上升
+            if (pixelBuffer != NULL) {  // 不加，会导致纹理没释放，内存不断上升
                 CFRelease(pixelBuffer);
             }
         }

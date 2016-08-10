@@ -648,11 +648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVPlayerWithOpenGL/AVPlayerView/AnotherOpenGLPlayerViewController.m"
-            timestampString = "492514969.964651"
+            timestampString = "492517735.574457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "-setupPlaybackForURL:"
             landmarkType = "7">
          </BreakpointContent>
