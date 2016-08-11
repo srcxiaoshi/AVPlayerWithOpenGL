@@ -67,6 +67,8 @@
 		E13D88FF1D5217E50075167F /* UNNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E13D88F21D5217E50075167F /* UNNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E188AB2E1D59A6730007BE95 /* for_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E188AB2D1D59A6730007BE95 /* for_test.jpg */; };
 		E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */; };
+		E18C24D81D5C357B00F250A6 /* NewWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C24D71D5C357B00F250A6 /* NewWebView.m */; };
+		E18C24DB1D5C365400F250A6 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C24DA1D5C365400F250A6 /* WebViewViewController.m */; };
 		E1E14AC01D5B368000223780 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E14ABF1D5B368000223780 /* OpenGLES.framework */; };
 		E1EDBF291D59C330008AB5C1 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EDBF281D59C330008AB5C1 /* OpenGLView.m */; };
 		E1EDBF2D1D59C8FF008AB5C1 /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E1EDBF2B1D59C8FF008AB5C1 /* shaderf.fsh */; };
@@ -239,6 +241,10 @@
 		E188AB2D1D59A6730007BE95 /* for_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = for_test.jpg; sourceTree = "<group>"; };
 		E189514B1D506DAE00841421 /* OpenGLPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLPlayerViewController.h; path = AVPlayerView/OpenGLPlayerViewController.h; sourceTree = "<group>"; };
 		E189514C1D506DAE00841421 /* OpenGLPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLPlayerViewController.m; path = AVPlayerView/OpenGLPlayerViewController.m; sourceTree = "<group>"; };
+		E18C24D61D5C357B00F250A6 /* NewWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewWebView.h; path = webView/NewWebView.h; sourceTree = "<group>"; };
+		E18C24D71D5C357B00F250A6 /* NewWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewWebView.m; path = webView/NewWebView.m; sourceTree = "<group>"; };
+		E18C24D91D5C365400F250A6 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewViewController.h; path = webView/WebViewViewController.h; sourceTree = "<group>"; };
+		E18C24DA1D5C365400F250A6 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewViewController.m; path = webView/WebViewViewController.m; sourceTree = "<group>"; };
 		E1E14ABE1D5B071600223780 /* Endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Endian.h; path = OpenGLPlayerView/Endian.h; sourceTree = "<group>"; };
 		E1E14ABF1D5B368000223780 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E1EDBF271D59C330008AB5C1 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLView.h; path = OpenGLPlayerView/OpenGLView.h; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 		3C6CF6CE1D4E2F1C001D6287 /* AVPlayerWithOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				E18C24D51D5C352A00F250A6 /* webView */,
 				E13D888E1D51BA5A0075167F /* SDWebImage */,
 				E13D88801D518D350075167F /* UserNotifications */,
 				E1FB21871D4F408B004E29DA /* AVPlayerView */,
@@ -512,6 +519,17 @@
 				E13D88FC1D5217E50075167F /* Info.plist */,
 			);
 			path = UNNotificationExtension;
+			sourceTree = "<group>";
+		};
+		E18C24D51D5C352A00F250A6 /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				E18C24D61D5C357B00F250A6 /* NewWebView.h */,
+				E18C24D71D5C357B00F250A6 /* NewWebView.m */,
+				E18C24D91D5C365400F250A6 /* WebViewViewController.h */,
+				E18C24DA1D5C365400F250A6 /* WebViewViewController.m */,
+			);
+			name = webView;
 			sourceTree = "<group>";
 		};
 		E1EDBF2A1D59C8E3008AB5C1 /* NOGLK */ = {
@@ -787,10 +805,12 @@
 				E1FB21821D4F403B004E29DA /* APLEAGLView.m in Sources */,
 				E1FAAF231D52DDC200593525 /* AVPlayerViewController.m in Sources */,
 				E13D88B91D51BA5A0075167F /* UIButton+WebCache.m in Sources */,
+				E18C24DB1D5C365400F250A6 /* WebViewViewController.m in Sources */,
 				E13D88B81D51BA5A0075167F /* SDWebImagePrefetcher.m in Sources */,
 				E13D88B61D51BA5A0075167F /* SDWebImageDownloaderOperation.m in Sources */,
 				E189514D1D506DAE00841421 /* OpenGLPlayerViewController.m in Sources */,
 				3C6CF6D41D4E2F1C001D6287 /* AppDelegate.m in Sources */,
+				E18C24D81D5C357B00F250A6 /* NewWebView.m in Sources */,
 				E13D88BB1D51BA5A0075167F /* UIImage+MultiFormat.m in Sources */,
 				E106198E1D5476EC008F3BBF /* PlayerTableViewCell.m in Sources */,
 				E13D88831D518E6D0075167F /* UNNotificationViewController.m in Sources */,

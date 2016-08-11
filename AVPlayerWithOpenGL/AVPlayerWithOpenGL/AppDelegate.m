@@ -20,7 +20,7 @@
 #import "AVPlayerViewController.h"
 #import "TableViewWithPlayerViewController.h"
 #import "AnotherOpenGLPlayerViewController.h"
-
+#import "WebViewViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -33,7 +33,8 @@
     
     
     //TableViewWithPlayerViewController * viewCon=[[TableViewWithPlayerViewController alloc]init];
-    AnotherOpenGLPlayerViewController *viewCon=[AnotherOpenGLPlayerViewController new];
+    //AnotherOpenGLPlayerViewController *viewCon=[AnotherOpenGLPlayerViewController new];
+    WebViewViewController *viewCon=[[WebViewViewController alloc]init];
     UINavigationController *navc=[[UINavigationController alloc]initWithRootViewController:viewCon];
     self.window.rootViewController=navc;
 
